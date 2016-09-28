@@ -38,3 +38,13 @@ func New() baa.HandlerFunc {
 		c.Next()
 	}
 }
+
+// NewFunc returns a baa HandlerFunc for http no-cache control
+func NewFunc() baa.HandlerFunc {
+	return func(c *baa.Context) {
+		// Set our NoCache headers
+		for k, v := range noCacheHeaders {
+			c.Resp.Header().Set(k, v)
+		}
+	}
+}
