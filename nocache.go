@@ -4,7 +4,7 @@ package nocache
 import (
 	"time"
 
-	baa "gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 // Unix epoch time
